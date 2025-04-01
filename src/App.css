@@ -1,4 +1,3 @@
-/* src/App.css */
 body {
   font-family: sans-serif;
   padding: 20px;
@@ -45,7 +44,7 @@ body {
   cursor: pointer;
   font-size: 1rem;
   transition: background-color 0.2s ease;
-  align-self: flex-start; /* Align button nicely */
+  align-self: flex-start;
 }
 
 .input-section button:hover {
@@ -53,9 +52,9 @@ body {
 }
 
 .error-message {
-    color: red;
-    font-size: 0.9em;
-    margin-top: 5px;
+  color: red;
+  font-size: 0.9em;
+  margin-top: 5px;
 }
 
 .timezones-grid {
@@ -70,7 +69,7 @@ body {
   border-radius: 6px;
   background-color: #f9f9f9;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  text-align: center; /* Center content */
+  text-align: center;
 }
 
 .timezone-card h3 {
@@ -81,26 +80,25 @@ body {
 }
 
 .clock-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center items horizontally */
-    gap: 10px; /* Space between analog and digital */
-    margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
 }
 
 .analog-clock-wrapper {
-    display: flex;
-    align-items: center; /* Align clock and AM/PM */
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .analog-clock-wrapper .react-clock {
-    /* You might need to adjust styles based on react-clock specifics */
 }
 
 .analog-clock-wrapper span {
-    font-weight: bold;
-    font-size: 1.1em;
+  font-weight: bold;
+  font-size: 1.1em;
 }
 
 .digital-clock {
@@ -109,5 +107,5 @@ body {
   background-color: #e0e0e0;
   padding: 5px 10px;
   border-radius: 4px;
-  display: inline-block; /* Fit content */
+  display: inline-block;
 }
