@@ -61,7 +61,7 @@ function App() {
 
   const handleAddTimezone = useCallback(() => {
     if (selectedNewTimezone && !selectedTimezones.includes(selectedNewTimezone)) {
-      setSelectedTimezones(prev => [...prev, selectedNewTimezone]);
+      setSelectedTimezones(prev => [selectedNewTimezone, ...prev]);
     }
   }, [selectedNewTimezone, selectedTimezones, availableTimezones]);
 
