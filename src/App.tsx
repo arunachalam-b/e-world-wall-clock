@@ -90,7 +90,7 @@ function App() {
 
   return (
     <div className="app-container">
-      <h1>Timezone Converter</h1>
+      <h1>xClock</h1>
 
       <div className="input-section">
         <label htmlFor="datetime-input">
