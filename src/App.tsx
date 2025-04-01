@@ -65,6 +65,10 @@ function App() {
     }
   }, [selectedNewTimezone, selectedTimezones, availableTimezones]);
 
+  const handleRemoveTimezone = useCallback((timezone: string) => {
+    setSelectedTimezones(prev => prev.filter(tz => tz !== timezone));
+  }, []);
+
   const timezoneOptions = useMemo(() => {
     return availableTimezones.filter(tz => !selectedTimezones.includes(tz));
   }, [availableTimezones, selectedTimezones]);
@@ -126,7 +130,25 @@ function App() {
       {baseDate && !parseError ? (
         <div className="timezones-grid">
           {selectedTimezones.map(tz => (
-            <TimezoneDisplay key={tz} baseDate={baseDate} timeZone={tz} />
+            <div key={tz} className="timezone-item" style={{ position: 'relative' }}>
+              <TimezoneDisplay baseDate={baseDate} timeZone={tz} />
+              <button 
+                onClick={() => handleRemoveTimezone(tz)} 
+                className="close-button"
+                aria-label={`Remove ${tz}`}
+                style={{
+                  position: 'absolute',
+                  top: '5px',
+                  right: '5px',
+                  background: 'transparent',
+                  border: 'none',
+                  fontSize: '16px',
+                  cursor: 'pointer',
+                }}
+              >
+                &times;
+              </button>
+            </div>
           ))}
         </div>
       ) : (
