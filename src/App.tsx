@@ -105,9 +105,9 @@ function App() {
         />
         {parseError && <p className="error-message">{parseError}</p>}
 
-        <div style={{ marginTop: '15px' }}>
+        <div className="timezone-select-wrapper">
             <label htmlFor="timezone-select">Add Timezone:</label>
-             <div style={{display: 'flex', gap: '10px', alignItems: 'center'}}>
+             <div className="timezone-select-container">
                 <select
                     id="timezone-select"
                     value={selectedNewTimezone}
@@ -130,21 +130,12 @@ function App() {
       {baseDate && !parseError ? (
         <div className="timezones-grid">
           {selectedTimezones.map(tz => (
-            <div key={tz} className="timezone-item" style={{ position: 'relative' }}>
+            <div key={tz} className="timezone-item">
               <TimezoneDisplay baseDate={baseDate} timeZone={tz} />
               <button 
                 onClick={() => handleRemoveTimezone(tz)} 
                 className="close-button"
                 aria-label={`Remove ${tz}`}
-                style={{
-                  position: 'absolute',
-                  top: '5px',
-                  right: '5px',
-                  background: 'transparent',
-                  border: 'none',
-                  fontSize: '16px',
-                  cursor: 'pointer',
-                }}
               >
                 &times;
               </button>
