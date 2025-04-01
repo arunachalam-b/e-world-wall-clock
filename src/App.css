@@ -1,38 +1,113 @@
-.App {
-  text-align: center;
+/* src/App.css */
+body {
+  font-family: sans-serif;
+  padding: 20px;
+  background-color: #f4f4f4;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.input-section {
+  margin-bottom: 25px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 10px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.input-section label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.input-section input[type="text"],
+.input-section select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.input-section button {
+  padding: 10px 15px;
+  background-color: #007bff;
   color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+  align-self: flex-start; /* Align button nicely */
 }
 
-.App-link {
-  color: #61dafb;
+.input-section button:hover {
+  background-color: #0056b3;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.error-message {
+    color: red;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+
+.timezones-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.timezone-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 6px;
+  background-color: #f9f9f9;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  text-align: center; /* Center content */
+}
+
+.timezone-card h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1.1em;
+  color: #333;
+}
+
+.clock-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    gap: 10px; /* Space between analog and digital */
+    margin-bottom: 10px;
+}
+
+.analog-clock-wrapper {
+    display: flex;
+    align-items: center; /* Align clock and AM/PM */
+    gap: 10px;
+}
+
+.analog-clock-wrapper .react-clock {
+    /* You might need to adjust styles based on react-clock specifics */
+}
+
+.analog-clock-wrapper span {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.digital-clock {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.5em;
+  background-color: #e0e0e0;
+  padding: 5px 10px;
+  border-radius: 4px;
+  display: inline-block; /* Fit content */
 }
